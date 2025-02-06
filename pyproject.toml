@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "django-dashboard"
+dynamic = ["version"]
+authors = [
+    {name="Sesóstris Vieira", email="sevieira@senado.leg.br"},
+]
+maintainers = [
+    {name="Sesóstris Vieira", email="sevieira@senado.leg.br"},
+]
+description = "A django app for creating dashboards"
+readme = "README.md"
+keywords = ["django", "dashboard", "chart", "chart.js"]
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Framework :: Django :: 5.0",
+]
+dependencies = [
+    "Django>=5.0",
+    "Pandas>=2.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/interlegis/django-dashboard"
+Documentation = "https://github.com/interlegis/django-dashboard/wiki"
+Repository = "https://github.com/interlegis/django-dashboard"
+Issues = "https://github.com/interlegis/django-dashboard/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dashboard"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
