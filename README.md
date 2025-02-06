@@ -58,7 +58,7 @@ Optionally you can add `dashboard.context_processors.dashboard` to the `context_
 Add the following to your root urls.py file:
 
 ```python
-    from dashboard import dashboard
+    from dashboard.registry import dashboard
     ...
     urlpatterns = [
         ...
